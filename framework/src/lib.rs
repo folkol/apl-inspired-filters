@@ -4,31 +4,34 @@ use std::io::stdin;
 
 pub type Lines = Box<dyn Iterator<Item=String>>;
 
-pub enum Arity {
+pub enum Valence {
     Niladic,
     Monadic(Lines),
-    Dyadic,
+    Dyadic(Lines, Lines),
 }
 
-impl Debug for Arity {
+impl Debug for Valence {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         let dbg = match &self {
-            Arity::Niladic => "Niladic",
-            Arity::Monadic(_) => "Monadic",
-            Arity::Dyadic => "Dyadic"
+            Valence::Niladic => "Niladic",
+            Valence::Monadic(_) => "Monadic",
+            Valence::Dyadic(_, _) => "Dyadic"
         };
         f.write_str(dbg)
     }
 }
 
-
 // TODO: Extend arguments to match rank?
-pub fn read_input() -> Arity {
+pub fn read_input() -> Valence {
     let args: Vec<_> = args().skip(1).collect();
     if args.is_empty() {
-        return Arity::Monadic(Box::new(stdin().lines().map_while(Result::ok)));
+        let lines = stdin().lines().map_while(Result::ok);
+        Valence::Monadic(Box::new(lines))
+    } else {
+        let lhs = stdin().lines().map_while(Result::ok);
+        let rhs = args.into_iter();
+        Valence::Dyadic(Box::new(lhs), Box::new(rhs))
     }
-    Arity::Niladic
 }
 
 // pub fn write_output(lines: Lines) -> ! {
