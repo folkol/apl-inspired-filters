@@ -17,7 +17,6 @@ dependencies = [
 name = "ceiling"
 version = "0.1.0"
 dependencies = [
- "atty",
  "framework",
 ]
 
@@ -30,6 +29,9 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "framework"
 version = "0.1.0"
+dependencies = [
+ "atty",
+]
 
 [[package]]
 name = "getrandom"
@@ -56,6 +58,13 @@ name = "libc"
 version = "0.2.147"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3"
+
+[[package]]
+name = "plus"
+version = "0.1.0"
+dependencies = [
+ "framework",
+]
 
 [[package]]
 name = "ppv-lite86"

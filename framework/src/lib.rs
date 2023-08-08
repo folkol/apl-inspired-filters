@@ -1,9 +1,11 @@
 use std::env::args;
 use std::fmt::{Debug, Display, Formatter};
-use std::io::{stdin, Write};
+use std::io::{BufWriter, stdin, stdout, Write};
 use std::io::ErrorKind::BrokenPipe;
 use std::iter::repeat;
 use std::str::FromStr;
+
+use atty::Stream::Stdout;
 
 pub type Lines = Box<dyn Iterator<Item=String>>;
 
@@ -83,6 +85,14 @@ pub fn parse<T>(lhs: String) -> Option<T>
         }
     };
     Some(lhs)
+}
+
+pub fn get_out() -> Box<dyn Write> {
+    if atty::is(Stdout) {
+        Box::new(stdout().lock())
+    } else {
+        Box::new(BufWriter::new(stdout().lock()))
+    }
 }
 
 

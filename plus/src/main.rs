@@ -1,3 +1,5 @@
+extern crate core;
+
 use std::io::Write;
 
 use framework::{get_out, Lines, parse, print_broken_pipe, Valence};
@@ -17,7 +19,7 @@ fn monadic(out: &mut Box<dyn Write>, lines: Lines) {
             Some(value) => value,
             None => continue,
         };
-        let n = n.ceil() as i64;
+        let n = n + 1.0;
         if print_broken_pipe(out, n) {
             break;
         }
@@ -35,7 +37,7 @@ fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
             None => continue,
         };
 
-        let n = lhs.max(rhs);
+        let n = lhs + rhs;
         if print_broken_pipe(out, n) {
             break;
         }
