@@ -1,9 +1,29 @@
 # APL inspired Unix filters
 
+Some APL functions reinterpeted as unix filters.
+
+- monadic functions work on stdin
+- dyadic functions work on stdin as RHS and `arguments` as LFS(!)
+- singleton argument are extended to match the length of stdin
+- no nesting
+- only support vectors, for now
+
+## TODO
+
+- support tabular / rank 2 arrays?
+- extend multiple arguments to match ranks of stdin?
+- read arrays from file with @argument?
+- decide what multiple @arguments mean
+- empty stdin but arguments present?
+
+## References
+
 - tabular text as arrays
 - https://aplwiki.com/wiki/Mnemonics
 - https://aplwiki.com/wiki/Overview
 - https://en.wikipedia.org/wiki/APL_syntax_and_symbols
+- https://tryapl.org
+- https://help.dyalog.com/18.2/index.htm
 
 ## primitive functions
 

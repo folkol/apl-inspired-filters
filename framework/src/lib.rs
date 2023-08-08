@@ -1,6 +1,7 @@
 use std::env::args;
 use std::fmt::{Debug, Formatter};
 use std::io::stdin;
+use std::iter::repeat;
 
 pub type Lines = Box<dyn Iterator<Item=String>>;
 
@@ -21,16 +22,32 @@ impl Debug for Valence {
     }
 }
 
-// TODO: Extend arguments to match rank?
 pub fn read_input() -> Valence {
     let args: Vec<_> = args().skip(1).collect();
+    let mut lines = stdin().lines().map_while(Result::ok).peekable();
     if args.is_empty() {
-        let lines = stdin().lines().map_while(Result::ok);
-        Valence::Monadic(Box::new(lines))
+        match lines.peek() {
+            None => Valence::Niladic,
+            Some(_) => {
+                Valence::Monadic(Box::new(lines))
+            }
+        }
     } else {
-        let lhs = stdin().lines().map_while(Result::ok);
-        let rhs = args.into_iter();
-        Valence::Dyadic(Box::new(lhs), Box::new(rhs))
+        match lines.peek() {
+            None => Valence::Monadic(Box::new(lines)),
+            Some(_) => {
+                let num_args = args.len();
+                if num_args == 1 {
+                    if let Some(scalar) = args.into_iter().next() {
+                        Valence::Dyadic(Box::new(lines), Box::new(repeat(scalar)))
+                    } else {
+                        Valence::Niladic
+                    }
+                } else {
+                    Valence::Dyadic(Box::new(lines), Box::new(args.into_iter()))
+                }
+            }
+        }
     }
 }
 
