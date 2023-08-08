@@ -1,0 +1,10 @@
+[package]
+name = "ceiling"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+framework = { path = "../framework" }
+atty = "0.2.14"
