@@ -7,6 +7,7 @@ Some APL functions reinterpeted as unix filters.
 - singleton argument are extended to match the length of stdin
 - no nesting
 - only support vectors, for now
+- in general, call them by the function name if only one Valence -- glyph name otherwise
 
 ## TODO
 
@@ -15,6 +16,8 @@ Some APL functions reinterpeted as unix filters.
 - read arrays from file with @argument?
 - decide what multiple @arguments mean
 - empty stdin but arguments present?
+- consider naming (maximum / ceiling, etc)
+- is empty stdin ok for dyadic functions? I think so?
 
 ## References
 
@@ -24,6 +27,7 @@ Some APL functions reinterpeted as unix filters.
 - https://en.wikipedia.org/wiki/APL_syntax_and_symbols
 - https://tryapl.org
 - https://help.dyalog.com/18.2/index.htm
+- https://www.jsoftware.com/papers/APLDictionary.htm
 
 ## primitive functions
 
