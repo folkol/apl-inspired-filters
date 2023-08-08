@@ -1,7 +1,9 @@
 use std::env::args;
-use std::fmt::{Debug, Formatter};
-use std::io::stdin;
+use std::fmt::{Debug, Display, Formatter};
+use std::io::{stdin, Write};
+use std::io::ErrorKind::BrokenPipe;
 use std::iter::repeat;
+use std::str::FromStr;
 
 pub type Lines = Box<dyn Iterator<Item=String>>;
 
@@ -50,6 +52,39 @@ pub fn read_input() -> Valence {
         }
     }
 }
+
+pub fn print_broken_pipe<T>(out: &mut Box<dyn Write>, n: T) -> bool
+    where
+        T: Display,
+{
+    match writeln!(out, "{n}") {
+        Ok(_) => {}
+        Err(e) if e.kind() == BrokenPipe => {
+            return true;
+        }
+        Err(e) => {
+            eprintln!("Failed writing output: {e}");
+            std::process::exit(1);
+        }
+    }
+    false
+}
+
+pub fn parse<T>(lhs: String) -> Option<T>
+    where
+        T: FromStr,
+        <T as FromStr>::Err: Display,
+{
+    let lhs = match lhs.parse::<T>() {
+        Ok(n) => n,
+        Err(e) => {
+            eprintln!("Couldn't parse number: `{lhs}` ({e})");
+            return None;
+        }
+    };
+    Some(lhs)
+}
+
 
 // pub fn write_output(lines: Lines) -> ! {
 //     let mut out = BufWriter::new(stdout().lock());
