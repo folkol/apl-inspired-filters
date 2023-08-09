@@ -10,4 +10,5 @@ members = [
   "bang",
   "decode",
   "times",
+  "divide",
 ]

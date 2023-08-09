@@ -28,7 +28,7 @@ Some APL functions reinterpeted as unix filters.
 - ~~?: Question Mark, Roll, Deal~~
 - ~~⊥: Up Tack Symbol,, Decode~~
 - L: ,, Mix
-- ×: Times Sign, Direction Signum, Times
+- ~~×: Times Sign, Direction Signum, Times~~
 - ÷: Divide Sign, Reciprocal, Divide
 - ↓: Down Arrow, ,Drop
 - ⊂: Left Shoe,Enclose,
