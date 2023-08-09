@@ -17,7 +17,7 @@ fn main() {
 
 fn monadic(out: &mut Box<dyn Write>, lines: Lines) {
     for line in lines {
-        let n: usize = match parse(line) {
+        let n: usize = match parse(&line) {
             Some(value) => value,
             None => continue,
         };
@@ -41,11 +41,11 @@ fn factorial(n: usize) -> UBig {
 // TODO: add support for non-integers with Beta function?
 fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
     for (lhs, rhs) in lhs.zip(rhs) {
-        let lhs: usize = match parse(lhs) {
+        let lhs: usize = match parse(&lhs) {
             Some(value) => value,
             None => continue,
         };
-        let rhs: usize = match parse(rhs) {
+        let rhs: usize = match parse(&rhs) {
             Some(value) => value,
             None => continue,
         };

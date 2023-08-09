@@ -1,3 +1,12 @@
 [workspace]
 resolver = "2"
-members = ["framework", "roll", "upstile", "plus", "minus", "lcm", "bang"]
+members = [
+  "framework",
+  "roll",
+  "upstile",
+  "plus",
+  "minus",
+  "lcm",
+  "bang",
+  "decode",
+]

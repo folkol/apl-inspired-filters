@@ -8,7 +8,7 @@ fn main() {
     let mut out = get_out();
     match framework::read_input() {
         Valence::Niladic => {}
-        Valence::Monadic(lines) => {
+        Valence::Monadic(_) => {
             eprintln!("lcd is dyadic");
             std::process::exit(1);
         }
@@ -18,11 +18,11 @@ fn main() {
 
 fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
     for (lhs, rhs) in lhs.zip(rhs) {
-        let lhs: usize = match parse(lhs) {
+        let lhs: usize = match parse(&lhs) {
             Some(value) => value,
             None => continue,
         };
-        let rhs: usize = match parse(rhs) {
+        let rhs: usize = match parse(&rhs) {
             Some(value) => value,
             None => continue,
         };

@@ -18,17 +18,17 @@ fn main() {
 
 fn monadic(out: &mut Box<dyn Write>, lines: Lines) {
     for line in lines {
-        roll(line);
+        if roll(out, line) { break; };
     }
 }
 
 fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
     for (lhs, rhs) in lhs.zip(rhs) {
-        let lhs: usize = match parse(lhs) {
+        let lhs: usize = match parse(&lhs) {
             Some(value) => value,
             None => continue,
         };
-        let rhs: usize = match parse(rhs) {
+        let rhs: usize = match parse(&rhs) {
             Some(value) => value,
             None => continue,
         };
@@ -49,18 +49,18 @@ fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
     }
 }
 
-fn roll(n: String) {
+fn roll(out: &mut Box<dyn Write>, n: String) -> bool {
     let n: usize = match n.parse() {
         Ok(n) if n == 0 => {
             eprintln!("What do you mean: \"zero sided dice\"?");
-            return;
+            return false;
         }
         Ok(n) => n,
         Err(e) => {
             eprintln!("couldn't parse number of faces: `{e}`");
-            return;
+            return false;
         }
     };
     let result = thread_rng().gen_range(1..=n);
-    println!("{result}");
+    print_broken_pipe(out, format!("{result}"))
 }

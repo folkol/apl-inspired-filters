@@ -72,7 +72,7 @@ pub fn print_broken_pipe<T>(out: &mut Box<dyn Write>, n: T) -> bool
     false
 }
 
-pub fn parse<T>(lhs: String) -> Option<T>
+pub fn parse<T>(lhs: &str) -> Option<T>
     where
         T: FromStr,
         <T as FromStr>::Err: Display,

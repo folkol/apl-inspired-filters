@@ -15,7 +15,7 @@ fn main() {
 
 fn monadic(out: &mut Box<dyn Write>, lines: Lines) {
     for line in lines {
-        let n: f64 = match parse(line) {
+        let n: f64 = match parse(&line) {
             Some(value) => value,
             None => continue,
         };
@@ -28,11 +28,11 @@ fn monadic(out: &mut Box<dyn Write>, lines: Lines) {
 
 fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
     for (lhs, rhs) in lhs.zip(rhs) {
-        let lhs: f64 = match parse(lhs) {
+        let lhs: f64 = match parse(&lhs) {
             Some(value) => value,
             None => continue,
         };
-        let rhs: f64 = match parse(rhs) {
+        let rhs: f64 = match parse(&rhs) {
             Some(value) => value,
             None => continue,
         };
