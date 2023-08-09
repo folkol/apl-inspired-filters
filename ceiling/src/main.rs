@@ -4,6 +4,7 @@ use framework::{get_out, Lines, parse, print_broken_pipe, Valence};
 
 /// upstile: ceiling / maximuma
 fn main() {
+
     let mut out = get_out();
     match framework::read_input() {
         Valence::Niladic => {}

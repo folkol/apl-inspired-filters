@@ -3,10 +3,11 @@ resolver = "2"
 members = [
   "framework",
   "roll",
-  "upstile",
+  "ceiling",
   "plus",
   "minus",
   "lcm",
   "bang",
   "decode",
+  "times",
 ]
