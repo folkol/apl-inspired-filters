@@ -25,7 +25,7 @@ Some APL functions reinterpeted as unix filters.
 - ~~!: Exclamation Mark, Factorial, Binomial~~
 - ~~⌈: Upstile, Ceiling, Maximum~~
 - ○: Circle, Pi Times, Circular
-- ?: Question Mark, Roll, Deal
+- ~~?: Question Mark, Roll, Deal~~
 - ⊥: Up Tack Symbol,, Decode
 - L: ,, Mix
 - ×: Times Sign, Direction Signum, Times

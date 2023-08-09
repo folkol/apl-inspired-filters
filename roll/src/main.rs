@@ -38,7 +38,7 @@ fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
         vec.shuffle(&mut rng);
 
         if lhs >= vec.len() {
-            eprintln!("Can't take {lhs} out of {} items.", vec.len());
+            eprintln!("Can't deal {lhs} out of {} items.", vec.len());
             continue;
         }
         let deal = &vec[..lhs];
