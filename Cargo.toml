@@ -13,4 +13,5 @@ members = [
     "divide",
     "encode",
     "circle",
+    "equal",
 ]
