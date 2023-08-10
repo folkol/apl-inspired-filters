@@ -29,10 +29,10 @@ Some APL functions reinterpeted as unix filters.
 - ~~⊥: Up Tack Symbol,, Decode~~
 - L: ,, Mix
 - ~~×: Times Sign, Direction Signum, Times~~
-- ÷: Divide Sign, Reciprocal, Divide
+- ~~÷: Divide Sign, Reciprocal, Divide~~
 - ↓: Down Arrow, ,Drop
 - ⊂: Left Shoe,Enclose,
-- ⊤: Down Tack Symbol, ,Encode
+- ~~⊤: Down Tack Symbol, ,Encode~~
 - =: Equal Sign, ,Equal
 - ~: Tilde,Not,Without
 - ⍀: Slope Bar, ,Expand First
