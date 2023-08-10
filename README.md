@@ -21,7 +21,7 @@ Some APL functions reinterpeted as unix filters.
 
 
 - ~~+: Plus Sign, Conjugate, Plus~~
-- ^: ,, And Lowest Common Multiple
+- ~~^: ,, And Lowest Common Multiple~~
 - ~~!: Exclamation Mark, Factorial, Binomial~~
 - ~~⌈: Upstile, Ceiling, Maximum~~
 - ○: Circle, Pi Times, Circular
