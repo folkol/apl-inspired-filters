@@ -29,31 +29,54 @@ fn monadic(out: &mut Box<dyn Write>, lhs: Lines) {
 
 fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
     for (lhs, rhs) in lhs.zip(rhs) {
-        let lhs: usize = match parse(&lhs) {
+        let lhs: f64 = match parse(&lhs) {
             Some(value) => value,
             None => continue,
         };
-        let rhs: usize = match parse(&rhs) {
+        let rhs: i8 = match parse(&rhs) {
             Some(value) => value,
             None => continue,
         };
 
-        let n = lcd(lhs, rhs);
+        let n = calc(lhs, rhs);
+
         if print_broken_pipe(out, n) {
             break;
         }
     }
 }
 
-fn lcd(a: usize, b: usize) -> usize {
-    a / gcd(a, b) * b
-}
+fn calc(lhs: f64, rhs: i8) -> f64 {
+    match rhs {
+        // pythagorean
+        0 => (1.0 - lhs * 2.0) * 0.5,
+        4 => (1.0 + lhs * 2.0) * 0.5,
+        8 => (-1.0 + lhs * 2.0) * 0.5,
+        -4 => {
+            if rhs == -1 {
+                0.0
+            } else {
+                (lhs + 1.0) * ((lhs - 1.0) / lhs + 1.0) * 0.5
+            }
+        }
 
-fn gcd(mut a: usize, mut b: usize) -> usize {
-    while b != 0 {
-        let t = b;
-        b = a % b;
-        a = t;
+        // trigonometric
+        1 => lhs.sin(),
+        2 => lhs.cos(),
+        3 => lhs.tan(),
+        -1 => lhs.asin(),
+        -2 => lhs.acos(),
+        -3 => lhs.atan(),
+
+        // hyperbolic
+        5 => lhs.sinh(),
+        6 => lhs.cosh(),
+        7 => lhs.tanh(),
+        -5 => lhs.asinh(),
+        -6 => lhs.acosh(),
+        -7 => lhs.atanh(),
+
+        // complex...
+        _ => todo!()
     }
-    a
 }
