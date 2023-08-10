@@ -1,5 +1,5 @@
 [package]
-name = "times"
+name = "multiply"
 version = "0.1.0"
 edition = "2021"
 

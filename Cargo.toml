@@ -1,15 +1,15 @@
 [workspace]
 resolver = "2"
 members = [
-  "framework",
-  "roll",
-  "ceiling",
-  "plus",
-  "minus",
-  "lcm",
-  "bang",
-  "decode",
-  "times",
-  "divide",
-  "encode",
+    "framework",
+    "roll",
+    "ceiling",
+    "plus",
+    "minus",
+    "lcm",
+    "bang",
+    "decode",
+    "multiply",
+    "divide",
+    "encode",
 ]

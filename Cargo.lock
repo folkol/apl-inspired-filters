@@ -121,6 +121,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "multiply"
+version = "0.1.0"
+dependencies = [
+ "framework",
+]
+
+[[package]]
 name = "num-traits"
 version = "0.2.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -185,13 +192,6 @@ name = "static_assertions"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
-
-[[package]]
-name = "times"
-version = "0.1.0"
-dependencies = [
- "framework",
-]
 
 [[package]]
 name = "wasi"
