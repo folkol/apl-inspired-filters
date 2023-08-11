@@ -2,7 +2,7 @@ extern crate core;
 
 use std::io::Write;
 
-use framework::{get_out, Lines, parse, print_broken_pipe, Valence};
+use framework::{get_out, Lines, print_broken_pipe, Valence};
 
 fn main() {
     let mut out = get_out();
@@ -31,14 +31,12 @@ fn is_equal(lhs: &String, rhs: &String) -> bool {
     let a: Result<usize, _> = lhs.parse();
     let b: Result<usize, _> = rhs.parse();
     if let (Ok(a), Ok(b)) = (a, b) {
-        eprintln!("usize");
         return a == b;
     }
 
     let a: Result<f64, _> = lhs.parse();
     let b: Result<f64, _> = rhs.parse();
     if let (Ok(a), Ok(b)) = (a, b) {
-        eprintln!("f64,\n - {}\n - {}\n - {}", a, b, b - a);
         return (b - a).abs() < f64::MIN_POSITIVE;
     }
 

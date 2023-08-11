@@ -33,7 +33,7 @@ Some APL functions reinterpeted as unix filters.
 - ↓: Down Arrow, ,Drop
 - ⊂: Left Shoe,Enclose,
 - ~~⊤: Down Tack Symbol, ,Encode~~
-- =: Equal Sign, ,Equal
+- ~~=: Equal Sign, ,Equal~~
 - ~: Tilde,Not,Without
 - ⍀: Slope Bar, ,Expand First
 - \*: Star,Exponential,Power
