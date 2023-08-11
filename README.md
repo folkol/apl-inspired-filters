@@ -36,7 +36,7 @@ Some APL functions reinterpeted as unix filters.
 - ~~=: Equal Sign, ,Equal~~
 - ~~~: Tilde,Not,Without~~
 - ⍀: Slope Bar, ,Expand First
-- \*: Star,Exponential,Power
+- ~~\*: Star,Exponential,Power~~
 - ⍷: Epsilon Underbar, ,Find
 - ⌊: Downstile,Floor,Minimum
 - ⍕: Thorn Symbol,Format Monadic,Format Dyadic
