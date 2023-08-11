@@ -31,22 +31,8 @@ fn monadic(out: &mut Box<dyn Write>, lhs: Lines) {
 }
 
 fn dyadic(out: &mut Box<dyn Write>, lhs: Lines, rhs: Lines) {
-    todo!();
-}
-
-fn is_equal(lhs: &String, rhs: &String) -> bool {
-    let a: Result<usize, _> = lhs.parse();
-    let b: Result<usize, _> = rhs.parse();
-    if let (Ok(a), Ok(b)) = (a, b) {
-        return a != b;
+    for (a, b) in lhs.zip(rhs) {
+        let filtered_chars: String = a.chars().filter(|c| !b.chars().any(|d| *c == d)).collect();
+        print_broken_pipe(out, filtered_chars);
     }
-
-    let a: Result<f64, _> = lhs.parse();
-    let b: Result<f64, _> = rhs.parse();
-    if let (Ok(a), Ok(b)) = (a, b) {
-        return (b - a).abs() >= f64::MIN_POSITIVE;
-    }
-
-
-    lhs != rhs
 }

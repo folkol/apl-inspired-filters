@@ -142,7 +142,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "nequal"
+name = "not"
 version = "0.1.0"
 dependencies = [
  "framework",
