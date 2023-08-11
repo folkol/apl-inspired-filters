@@ -15,4 +15,5 @@ members = [
     "circle",
     "equal",
     "not",
+    "power",
 ]

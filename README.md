@@ -34,7 +34,7 @@ Some APL functions reinterpeted as unix filters.
 - ⊂: Left Shoe,Enclose,
 - ~~⊤: Down Tack Symbol, ,Encode~~
 - ~~=: Equal Sign, ,Equal~~
-- ~: Tilde,Not,Without
+- ~~~: Tilde,Not,Without~~
 - ⍀: Slope Bar, ,Expand First
 - \*: Star,Exponential,Power
 - ⍷: Epsilon Underbar, ,Find
