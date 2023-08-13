@@ -16,4 +16,5 @@ members = [
     "equal",
     "not",
     "power",
+    "drop",
 ]

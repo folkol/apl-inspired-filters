@@ -62,6 +62,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "drop"
+version = "0.1.0"
+dependencies = [
+ "framework",
+]
+
+[[package]]
 name = "encode"
 version = "0.1.0"
 dependencies = [
