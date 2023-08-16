@@ -17,4 +17,6 @@ members = [
     "not",
     "power",
     "drop",
+    "floor",
+    "ge",
 ]

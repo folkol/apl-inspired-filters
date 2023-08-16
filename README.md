@@ -30,7 +30,7 @@ Some APL functions reinterpeted as unix filters.
 - L: ,, Mix
 - ~~×: Times Sign, Direction Signum, Times~~
 - ~~÷: Divide Sign, Reciprocal, Divide~~
-- ↓: Down Arrow, ,Drop
+- ~~↓: Down Arrow, ,Drop~~
 - ⊂: Left Shoe,Enclose,
 - ~~⊤: Down Tack Symbol, ,Encode~~
 - ~~=: Equal Sign, ,Equal~~
@@ -38,7 +38,7 @@ Some APL functions reinterpeted as unix filters.
 - ⍀: Slope Bar, ,Expand First
 - ~~\*: Star,Exponential,Power~~
 - ⍷: Epsilon Underbar, ,Find
-- ⌊: Downstile,Floor,Minimum
+- ~~⌊: Downstile,Floor,Minimum~~
 - ⍕: Thorn Symbol,Format Monadic,Format Dyadic
 - ⍒: Grade Down,Grade Down Monadic,Grade Down Dyadic
 - ⍋: Grade Up,Grade Up Monadic,Grade Up Dyadic
