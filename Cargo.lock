@@ -229,6 +229,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "residue"
+version = "0.1.0"
+dependencies = [
+ "framework",
+]
+
+[[package]]
 name = "roll"
 version = "0.1.0"
 dependencies = [

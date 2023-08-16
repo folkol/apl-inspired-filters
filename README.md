@@ -42,7 +42,7 @@ Some APL functions reinterpeted as unix filters.
 - ⍕: Thorn Symbol,Format Monadic,Format Dyadic
 - ⍒: Grade Down,Grade Down Monadic,Grade Down Dyadic
 - ⍋: Grade Up,Grade Up Monadic,Grade Up Dyadic
-- ≥: Greater Than Or Equal To Sign, ,Greater Or Equal
+- ~~≥: Greater Than Or Equal To Sign, ,Greater Or Equal~~
 - ⊢: Right Tack,Identity,Right
 - ⍳: Iota,Index Generator,Index Of
 - ⌷: Squad Symbol,Materialise,Index
@@ -51,7 +51,7 @@ Some APL functions reinterpeted as unix filters.
 - ⊣: Left Tack,Same,Left
 - ≤: Less Than Or Equal To Sign, ,Less Or Equal
 - ⍟: Log,Natural Logarithm,Logarithm
-- |: Stile,Magnitude,Residue
+- ~~|: Stile,Magnitude,Residue~~
 - ≡: Equal Underbar Sign, ,Match
 - ⌹: Domino,Matrix Inverse,Matrix Divide
 - ∊: Epsilon, ,Membership
